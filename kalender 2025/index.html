@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalender Interaktif 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth" class="nav-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h2 id="monthDisplay">Januari 2025</h2>
+            <button id="nextMonth" class="nav-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="calendar-grid">
+            <div class="weekdays">
+                <div>Min</div>
+                <div>Sen</div>
+                <div>Sel</div>
+                <div>Rab</div>
+                <div>Kam</div>
+                <div>Jum</div>
+                <div>Sab</div>
+            </div>
+            <div id="datesContainer" class="dates"></div>
+        </div>
+
+        <div class="widgets-container">
+
+            
+            <div id="countdownContainer" class="countdown-widget">
+                <h3>🕰️ Hitung Mundur Event</h3>
+                <!-- Konten hitung mundur akan diisi oleh JavaScript -->
+            </div>
+            
+            <div id="statsContainer" class="stats-widget">
+                <h3>📊 Statistik Kalender</h3>
+                <!-- Statistik akan diisi oleh JavaScript -->
+            </div>
+        </div>
+
+        <div class="event-section">
+
+
+            
+            <div class="event-options">
+                <h1 id="saveEvent"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalDate">Tanggal Terpilih</h3>
+            <textarea id="modalEventNote" placeholder="Edit catatan..."></textarea>
+            
+            <div class="modal-event-options">
+                <select id="eventColor">
+                    <option value="#4a90e2">Liburan</option>
+                    <option value="#27ae60">Acara</option>
+                    <option value="#e74c3c">Tugas</option>
+                    <option value="#f39c12">Ulang tahun</option>
+                    <option value="#f39c12">Catatan Penting</option>
+                </select>
+                
+                <select id="eventPriority">
+                    <option value="normal">Normal</option>
+                    <option value="high">Penting</option>
+                    <option value="low">Rendah</option>
+                </select>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="updateEvent">Update</button>
+                <button id="deleteEvent">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
