@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '2025-02-14': '❤️ Hari Valentine',
         '2025-08-17': '🇮🇩 Hari Kemerdekaan RI',
     };
-
-    // Fitur Cuaca Sederhana (Mock)
+    
     function fetchWeather() {
         const weatherData = [
             { day: 'Senin', temp: 28, icon: '☀️' },
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // Fitur Countdown Event
     function updateCountdowns() {
         const countdowns = [
             { 
@@ -67,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
-    // Statistik Kalender
     function updateCalendarStats() {
         const currentMonthEvents = Object.keys(events).filter(date => 
             new Date(date).getMonth() === currentDate.getMonth() &&
@@ -95,13 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         monthDisplay.textContent = `${firstDayOfMonth.toLocaleString('id-ID', { month: 'long' })} ${currentDate.getFullYear()}`;
 
-        // Tambah sel kosong
         for (let i = 0; i < startingDayIndex; i++) {
             const emptyCell = document.createElement('div');
             datesContainer.appendChild(emptyCell);
         }
 
-        // Render tanggal
         for (let day = 1; day <= totalDays; day++) {
             const dateCell = document.createElement('div');
             dateCell.textContent = day;
@@ -111,18 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const todayDate = new Date();
             const dateKey = currentDay.toISOString().split('T')[0];
 
-            // Highlight hari ini
             if (currentDay.toDateString() === todayDate.toDateString()) {
                 dateCell.classList.add('today');
             }
 
-            // Tandai hari libur
             if (holidays[dateKey]) {
                 dateCell.classList.add('holiday');
                 dateCell.setAttribute('title', holidays[dateKey]);
             }
 
-            // Tandai event
             if (events[dateKey]) {
                 dateCell.classList.add('event-date');
                 dateCell.setAttribute('title', events[dateKey].note);
@@ -132,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
             datesContainer.appendChild(dateCell);
         }
 
-        // Update statistik dan widget
         updateCalendarStats();
         fetchWeather();
         updateCountdowns();
@@ -203,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCalendar();
     }
 
-    // Event listeners
     prevMonthBtn.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         renderCalendar();
@@ -231,11 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-    // Mendapatkan elemen tombol dengan id "saveEvent"
     const saveEventButton = document.getElementById("saveEvent");
 
-    // Menambahkan event listener untuk menangani klik tombol
     saveEventButton.addEventListener("click", function() {
-        // Mengarahkan ke URL yang diinginkan
-        window.location.href = "https://www.example.com"; // Ganti dengan URL tujuan yang diinginkan
+        window.location.href = "https://www.example.com"; 
     });
