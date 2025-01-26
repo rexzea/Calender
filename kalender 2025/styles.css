@@ -1,5 +1,4 @@
 :root {
-    /* Desain Warna Modern */
     --primary-color: #4a6cf7;
     --secondary-color: #38d9a9;
     --accent-color: #ff6b6b;
@@ -40,8 +39,6 @@ body {
     overflow: hidden;
     position: relative;
 }
-
-/* Efek Glassmorphism pada Header */
 .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -215,7 +212,6 @@ body {
     box-shadow: 0 8px 15px rgba(56,217,169,0.2);
 }
 
-/* Responsivitas */
 @media (max-width: 768px) {
     .calendar-container {
         padding: 20px;
@@ -232,7 +228,6 @@ body {
 
 
 
-/* Styling Modal Tanggal Terpilih */
 .modal {
     display: none;
     position: fixed;
@@ -390,7 +385,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Tambahan Responsivitas Modal */
 @media (max-width: 600px) {
     .modal-content {
         width: 95%;
